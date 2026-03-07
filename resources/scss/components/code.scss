@@ -1,0 +1,79 @@
+@use "../variables" as *;
+
+.workshop-code {
+    margin: 1rem 0 1.5rem;
+}
+
+.workshop-code__label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: $color-accent;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.workshop-code__pre {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    background: #1e1e2e;
+    color: #f8f8f2;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+.workshop-code__code {
+    font-family: "Fira Code", "Cascadia Code", Consolas, monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Veelgebruikte highlight.js / highlight.php token classes */
+.hljs-comment,
+.hljs-quote {
+    color: #6A9955;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+    color: #ff7b72;
+}
+
+.hljs-string,
+.hljs-title {
+    color: #CE9178;
+}
+
+.hljs-name,
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+    color: #79c0ff;
+}
+
+.hljs-tag {
+    color: #b8b8b8;
+}
+
+
+.hljs-attr,
+.hljs-attribute {
+    color: #9cdcfe;
+}
+
+
+.hljs-selector-tag {
+    color: #e1e15b;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: 700;
+}

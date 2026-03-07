@@ -1,0 +1,15 @@
+@use '../variables' as *;
+
+.text {
+    margin-bottom: 1rem;
+
+    b {
+        font-weight: bold;
+        color: $color-primary;
+    }
+
+    ul,
+    ol {
+        padding-inline-start: 1.5rem;
+    }
+}

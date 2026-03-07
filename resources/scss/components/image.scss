@@ -1,0 +1,20 @@
+@use "../variables" as *;
+
+.image {
+    margin-bottom: 1rem;
+
+    img {
+        max-width: 100%;
+        border-radius: 0.5rem;
+    }
+
+    figcaption {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        background: $color-accent;
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+}

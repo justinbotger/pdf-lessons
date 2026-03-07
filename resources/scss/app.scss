@@ -1,0 +1,17 @@
+@use "reset.scss";
+
+@use "components/page.scss";
+@use "components/banner.scss";
+@use "components/title.scss";
+@use "components/step.scss";
+@use "components/text.scss";
+@use "components/image.scss";
+@use "components/code.scss";
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+@page {
+    // padding-top: 100px;
+}

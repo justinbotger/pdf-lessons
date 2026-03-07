@@ -1,0 +1,25 @@
+@use '../variables' as *;
+
+.step {
+    margin-bottom: 2rem;
+    page-break-inside: avoid;
+
+    .step-number {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        background-color: $color-primary;
+        float: left;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-block-start: 0.5rem;
+    }
+
+    .step-content {
+        padding-inline-start: 4rem;
+    }
+}

@@ -1,0 +1,11 @@
+@use "sass:color";
+@use "../variables.scss" as *;
+
+.callout {
+    text-align: center;
+    font-style: italic;
+    border: solid $color-primary 1px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: color.mix(white, color.scale($color-primary, $saturation: -65%), 82%);
+}

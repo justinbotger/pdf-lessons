@@ -1,0 +1,188 @@
+@use "../variables" as *;
+
+// Chrome colour tokens
+$chrome-bg: #dee1e6;
+$chrome-bar: #f1f3f4;
+$chrome-border: #c4c7cc;
+$chrome-text: #3c4043;
+
+.result {
+    display: inline-block;
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+    overflow: hidden;
+    border: 1px solid $chrome-border;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    font-family: "Google Sans", Arial, sans-serif;
+}
+
+// ── Tab bar ──────────────────────────────────────────────
+.result__tabbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background: $chrome-bg;
+    padding: 0.4rem 0 0 0.4rem;
+}
+
+.result__tabs {
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+    flex: 1;
+    overflow: hidden;
+}
+
+.result__tab {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem 0.35rem 0.85rem;
+    background: darken($chrome-bg, 6%);
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-size: 0.75rem;
+    color: $chrome-text;
+    white-space: nowrap;
+    max-width: 10rem;
+    cursor: default;
+    margin-bottom: -1px;
+    position: relative;
+
+    &--active {
+        background: $chrome-bar;
+        z-index: 1;
+    }
+
+    &__title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1;
+    }
+
+    &__close {
+        font-size: 0.65rem;
+        color: #777;
+        border-radius: 50%;
+        width: 1.1rem;
+        height: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+.result__tab-new {
+    background: none;
+    border: none;
+    color: $chrome-text;
+    font-size: 1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 2px;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.08);
+    }
+}
+
+.result__controls {
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.result__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2rem;
+    font-size: 0.8rem;
+    color: $chrome-text;
+    cursor: default;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.06);
+    }
+
+    &--close:hover {
+        background: #c42b1c;
+        color: #fff;
+    }
+}
+
+// ── Address / nav bar ─────────────────────────────────────
+.result__chrome {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.4rem 0.6rem;
+    background: $chrome-bar;
+    border-bottom: 1px solid $chrome-border;
+}
+
+.result__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    color: $chrome-text;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: default;
+    flex-shrink: 0;
+    padding: 0;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.06);
+    }
+
+    &--refresh {
+        font-size: 1rem;
+    }
+
+    &--menu {
+        font-size: 1.2rem;
+        letter-spacing: 0;
+    }
+}
+
+.result__addressbar {
+    flex: 1;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background: #e8eaed;
+    border: none;
+    font-size: 0.78rem;
+    color: $chrome-text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// ── Viewport ──────────────────────────────────────────────
+.result__viewport {
+    background: #fff;
+    line-height: 0;
+}
+
+.result__content {
+    width: 100%;
+    display: block;
+}

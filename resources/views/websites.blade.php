@@ -19,7 +19,7 @@
         <x-step number="1">
             <x-text>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur <b>adipiscing</b> elit.
+                    Lorem ipsum dolor sit amet, consectetur <b>adipiscing</b> elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, odio provident veniam enim consequatur maxime veritatis consequuntur ullam deserunt, iure aliquid. Est autem cupiditate reprehenderit consequuntur ipsa. Exercitationem, a eos?
                 </p>
                 <ul>
                     <li>Item 1</li>
@@ -28,8 +28,10 @@
                 </ul>
             </x-text>
             <x-image src="{{ public_path('img/vscode.webp') }}" alt="Stap 1" caption="Visual Studio Code" />
+            <x-callout>
+                "Simplicity is the consequence of refined emotions." - Jean D'Alembert
+            </x-callout>
         </x-step>
-
     </x-page>
     <x-page>
         <x-step number="2">
@@ -50,8 +52,8 @@
                     <p>Hallo! Dit is mijn eerste website.</p>
                 </body>
                 </html>
-                            </x-code>
-                            <x-code language="css" label="CSS">
+            </x-code>
+            <x-code language="css" label="CSS">
                 body {
                     background: lightblue;
                     font-family: Arial, sans-serif;
@@ -72,6 +74,7 @@
                     font-family: Arial, sans-serif;
                 }
             </x-code>
+            <x-result image="{{ public_path('img/basic.jpg') }}" :titles="['home', 'books']" url="index.html" />
         </x-step>
     </x-page>
 </body>

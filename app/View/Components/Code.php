@@ -47,27 +47,62 @@ class Code extends Component
 
         $lines = explode("\n", $code);
         $minIndent = null;
+        $lineIndents = [];
+        $firstContentLine = null;
 
-        foreach ($lines as $line) {
+        foreach ($lines as $index => $line) {
             if (trim($line) === '') {
                 continue;
             }
 
             preg_match('/^[\t ]*/', $line, $matches);
             $indentWidth = strlen($matches[0]);
-            $minIndent = $minIndent === null ? $indentWidth : min($minIndent, $indentWidth);
 
-            if ($minIndent === 0) {
-                break;
+            $lineIndents[$index] = $indentWidth;
+            if ($firstContentLine === null) {
+                $firstContentLine = $index;
             }
+
+            $minIndent = $minIndent === null ? $indentWidth : min($minIndent, $indentWidth);
         }
 
-        if ($minIndent === null || $minIndent === 0) {
+        if ($minIndent !== null && $minIndent > 0) {
+            foreach ($lines as &$line) {
+                $line = preg_replace('/^[\t ]{0,' . $minIndent . '}/', '', $line) ?? $line;
+            }
+
+            unset($line);
+
+            return implode("\n", $lines);
+        }
+
+        if ($firstContentLine === null || ($lineIndents[$firstContentLine] ?? null) !== 0) {
             return $code;
         }
 
-        foreach ($lines as &$line) {
-            $line = preg_replace('/^[\t ]{0,' . $minIndent . '}/', '', $line) ?? $line;
+        // Laravel trims component slots, which can remove indentation from only the first line.
+        $minIndentAfterFirst = null;
+
+        foreach ($lineIndents as $index => $indentWidth) {
+            if ($index === $firstContentLine) {
+                continue;
+            }
+
+            $minIndentAfterFirst = $minIndentAfterFirst === null
+                ? $indentWidth
+                : min($minIndentAfterFirst, $indentWidth);
+        }
+
+        if ($minIndentAfterFirst === null || $minIndentAfterFirst === 0) {
+            return $code;
+        }
+
+        foreach ($lines as $index => &$line) {
+            if ($index === $firstContentLine || trim($line) === '') {
+                continue;
+            }
+
+            $line = preg_replace('/^[\t ]{0,' . $minIndentAfterFirst . '}/', '', $line) ?? $line;
         }
 
         unset($line);

@@ -12,10 +12,7 @@
 </head>
 <body>
     <x-banner />
-    <x-page>
-        <x-title>
-            Workshop Webdevelopment — Stap 1
-        </x-title>
+    <x-page :number="1">
         <x-step number="1">
             <x-text>
                 <p>
@@ -33,7 +30,7 @@
             </x-callout>
         </x-step>
     </x-page>
-    <x-page>
+    <x-page :number="2">
         <x-step number="2">
             <x-text>
                 <p>
@@ -61,7 +58,7 @@
             </x-code>
         </x-step>
     </x-page>
-    <x-page>
+    <x-page :number="3">
         <x-step number="3">
             <x-text>
                 <p>

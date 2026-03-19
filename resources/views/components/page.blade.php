@@ -1,5 +1,12 @@
+@props([
+    'number' => null,
+])
+
 <div class="page">
-    <div class="content">
+    @if (isset($number))
+        <div class="page__number">{{ $number }}</div>
+    @endif
+    <div class="page__content">
         {{ $slot }}
     </div>
 </div>

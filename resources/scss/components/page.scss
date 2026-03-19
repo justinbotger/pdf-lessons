@@ -1,8 +1,20 @@
+@use "../variables" as *;
+
 .page {
     page-break-after: always;
     padding-top: 100px;
+    position: relative;
 
-    .content {
+    &__number {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
+
+    &__content {
         padding: 3rem;
     }
 }

@@ -1,5 +1,5 @@
 @props([
-    'src',
+    'src' => '',
     'alt' => '',
     'caption' => null,
 ])

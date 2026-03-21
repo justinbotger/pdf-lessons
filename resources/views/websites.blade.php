@@ -12,67 +12,838 @@
 </head>
 <body>
     <x-banner />
-    <x-page :number="1">
-        <x-step number="1">
-            <x-text>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur <b>adipiscing</b> elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, odio provident veniam enim consequatur maxime veritatis consequuntur ullam deserunt, iure aliquid. Est autem cupiditate reprehenderit consequuntur ipsa. Exercitationem, a eos?
-                </p>
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
-            </x-text>
-            <x-image src="{{ public_path('img/vscode.webp') }}" alt="Stap 1" caption="Visual Studio Code" />
-            <x-callout>
-                "Simplicity is the consequence of refined emotions." - Jean D'Alembert
-            </x-callout>
-        </x-step>
-    </x-page>
-    <x-page :number="2">
-        <x-step number="2">
-            <x-text>
-                <p>
-                    Sed do eiusmod tempor incididunt ut <b>HTML</b> labore et dolore magna aliqua.
-                </p>
-            </x-text>
-            <x-code language="html" label="HTML">
-                <!DOCTYPE html>
-                <html lang="nl">
-                <head>
-                    <meta charset="UTF-8">
-                    <title>Mijn eerste website</title>
-                </head>
-                <body>
-                    <h1>Mijn eerste website</h1>
-                    <p>Hallo! Dit is mijn eerste website.</p>
-                </body>
-                </html>
-            </x-code>
-            <x-code language="css" label="CSS">
-                body {
-                    background: lightblue;
-                    font-family: Arial, sans-serif;
-                }
-            </x-code>
-        </x-step>
-    </x-page>
-    <x-page :number="3">
-        <x-step number="3">
-            <x-text>
-                <p>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat.
-                </p>
-            </x-text>
-            <x-code language="css" label="CSS">
-                body {
-                    background: lightblue;
-                    font-family: Arial, sans-serif;
-                }
-            </x-code>
-            <x-result image="{{ public_path('img/basic.jpg') }}" :titles="['home', 'books']" url="index.html" />
-        </x-step>
-    </x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 1 - WAT IS EEN WEBSITE?                         --}}
+{{-- ===================================================== --}}
+<x-page :number="1">
+    <x-title>Wat is een website?</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Een website bestaat uit bestanden. In deze workshop ga je zelf zo'n website maken.
+                Je werkt straks vooral met twee soorten bestanden:
+            </p>
+            <ul>
+                <li><b>HTML</b> voor de inhoud van de pagina</li>
+                <li><b>CSS</b> voor de kleuren, ruimte en opmaak</li>
+            </ul>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Je browser leest die bestanden en maakt daar een webpagina van.
+                HTML vertelt <b>wat</b> er op de pagina staat.
+                CSS vertelt <b>hoe</b> het eruitziet.
+            </p>
+        </x-text>
+
+        <x-callout>
+            We beginnen klein. Eerst maken we alleen een titel en een stukje tekst.
+        </x-callout>
+    </x-step>
+
+    <x-step number="3">
+        <x-image
+            alt="Windows Verkenner met een map waarin later websitebestanden kunnen staan"
+            caption="Een website begint vaak als een gewone map op je computer"
+        />
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 2 - JE EERSTE BESTAND                           --}}
+{{-- ===================================================== --}}
+<x-page :number="2">
+    <x-title>Je eerste bestand</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Maak eerst een nieuwe map aan, bijvoorbeeld met de naam <b>mijn-website</b>.
+                In die map zet je straks al je bestanden.
+            </p>
+        </x-text>
+
+        <x-image
+            alt="Windows Verkenner waarin een nieuwe map met de naam mijn-website wordt aangemaakt"
+            caption="Maak eerst een map voor je website"
+        />
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Maak in die map een nieuw bestand met de naam <b>index.html</b>.
+            </p>
+            <p>
+                De naam <b>index</b> wordt vaak gebruikt voor de beginpagina van een website.
+                De uitgang <b>.html</b> laat zien dat dit een HTML-bestand is.
+            </p>
+        </x-text>
+
+        <x-image
+            alt="Windows Verkenner met een bestand index.html in een map"
+            caption="Je eerste HTML-bestand"
+        />
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Open <b>index.html</b> in je editor. We gaan nu de eerste HTML typen.
+            </p>
+        </x-text>
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 3 - JE EERSTE ZICHTBARE HTML                    --}}
+{{-- ===================================================== --}}
+<x-page :number="3">
+    <x-title>Je eerste zichtbare HTML</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                HTML werkt met <b>tags</b>. Een tag vertelt aan de browser wat iets is.
+                Sommige tags maken een grote titel, andere tags maken gewone tekst.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Typ eerst alleen deze twee regels in <b>index.html</b>:
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<h1>Mijn eerste website</h1>
+<p>Hallo! Dit is mijn eerste website.</p>
+        </x-code>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                De eerste regel gebruikt de tag <b>&lt;h1&gt;</b>. Dat is een grote titel.
+                De tweede regel gebruikt <b>&lt;p&gt;</b>. Dat is een paragraaf met gewone tekst.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="4">
+        <x-text>
+            <p>
+                Sla het bestand op en open <b>index.html</b> in je browser.
+                Als het goed is zie je nu een grote titel en daaronder tekst.
+            </p>
+        </x-text>
+
+        <x-result />
+    </x-step>
+
+    <x-step number="5">
+        <x-text>
+            <p>
+                Verander nu de tekst zodat die over jezelf gaat.
+                Bijvoorbeeld je naam, je leeftijd of iets wat je leuk vindt.
+            </p>
+        </x-text>
+
+        <x-callout>
+            Sla op met <b>CTRL + S</b> en ververs daarna je browser.
+        </x-callout>
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 4 - DE BODY                                     --}}
+{{-- ===================================================== --}}
+<x-page :number="4">
+    <x-title>De body van je pagina</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Wat je net hebt gemaakt werkt al. Maar een echte HTML-pagina heeft meestal
+                ook een duidelijke buitenkant.
+            </p>
+            <p>
+                Het deel dat zichtbaar is op de pagina staat in de <b>body</b>.
+                Je kunt de body zien als het zichtbare gedeelte van de website.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Zet je titel en tekst nu tussen <b>&lt;body&gt;</b> en <b>&lt;/body&gt;</b>.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<body>
+    <h1>Mijn eerste website</h1>
+    <p>Hallo! Dit is mijn eerste website.</p>
+</body>
+        </x-code>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Alles wat tussen deze tags staat, kan zichtbaar worden in de browser.
+                Daarom horen je titel, tekst, lijstjes en afbeeldingen later allemaal in de body.
+            </p>
+        </x-text>
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 5 - HET HTML-ELEMENT                            --}}
+{{-- ===================================================== --}}
+<x-page :number="5">
+    <x-title>De buitenkant van je document</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Nu voegen we nog een laag toe om de hele pagina heen:
+                het <b>html</b>-element.
+            </p>
+            <p>
+                Dat element vertelt waar het hele HTML-document begint en eindigt.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-code language="html" label="HTML">
+<html>
+<body>
+    <h1>Mijn eerste website</h1>
+    <p>Hallo! Dit is mijn eerste website.</p>
+</body>
+</html>
+        </x-code>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Je hebt nu dus:
+            </p>
+            <ul>
+                <li>een buitenkant: <b>&lt;html&gt;</b></li>
+                <li>een zichtbaar deel: <b>&lt;body&gt;</b></li>
+                <li>inhoud in de body: titel en tekst</li>
+            </ul>
+        </x-text>
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 6 - DE HEAD EN TITLE                            --}}
+{{-- ===================================================== --}}
+<x-page :number="6">
+    <x-title>De head en de title</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Een webpagina heeft niet alleen een zichtbaar deel. Er is ook een deel
+                met informatie voor de browser. Dat deel heet de <b>head</b>.
+            </p>
+            <p>
+                De inhoud van de head zie je meestal niet midden op de pagina, maar die is wel belangrijk.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Een van de dingen die je in de head kunt zetten is de <b>title</b>.
+                Dat is de titel die je meestal bovenin het browser-tabblad ziet.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<head>
+    <title>Mijn eerste website</title>
+</head>
+        </x-code>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Zet de head nu boven de body in je document.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<html>
+<head>
+    <title>Mijn eerste website</title>
+</head>
+<body>
+    <h1>Mijn eerste website</h1>
+    <p>Hallo! Dit is mijn eerste website.</p>
+</body>
+</html>
+        </x-code>
+    </x-step>
+
+    <x-step number="4">
+        <x-text>
+            <p>
+                Je pagina ziet er nu bijna hetzelfde uit als eerst, maar de browser heeft
+                nu extra informatie gekregen.
+            </p>
+        </x-text>
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 7 - MEER TEKST EN OPMAAK IN HTML                --}}
+{{-- ===================================================== --}}
+<x-page :number="7">
+    <x-title>Meer tekst en opmaak in HTML</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Nu je basispagina staat, kun je de inhoud uitbreiden.
+                Maak van je website een klein profiel over jezelf.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Voeg meer paragrafen toe. Je kunt bijvoorbeeld schrijven over:
+            </p>
+            <ul>
+                <li>je naam</li>
+                <li>je hobby</li>
+                <li>je favoriete eten</li>
+                <li>iets dat je heel leuk vindt</li>
+            </ul>
+        </x-text>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Je kunt belangrijke woorden extra nadruk geven met andere tags.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<p>Ik hou van <strong>games</strong>.</p>
+<p>Mijn hobby is <i>tekenen</i>.</p>
+        </x-code>
+    </x-step>
+
+    <x-step number="4">
+        <x-text>
+            <p>
+                <b>&lt;strong&gt;</b> maakt tekst belangrijker en meestal vet.
+                <b>&lt;i&gt;</b> maakt tekst schuin.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="5">
+        <x-result />
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 8 - LIJSTJES                                    --}}
+{{-- ===================================================== --}}
+<x-page :number="8">
+    <x-title>Lijstjes maken</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Als je meerdere dingen netjes onder elkaar wilt zetten, gebruik je een lijst.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Voor een gewone lijst zonder nummers gebruik je <b>&lt;ul&gt;</b>.
+                Voor elk item in die lijst gebruik je <b>&lt;li&gt;</b>.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<ul>
+    <li>Pizza</li>
+    <li>Minecraft</li>
+    <li>Honden</li>
+</ul>
+        </x-code>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Maak nu een lijst met jouw favoriete dingen.
+                Bijvoorbeeld je favoriete eten of je favoriete games.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="4">
+        <x-result />
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 9 - AFBEELDINGEN                                --}}
+{{-- ===================================================== --}}
+<x-page :number="9">
+    <x-title>Afbeeldingen toevoegen</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Je kunt ook afbeeldingen op je website zetten.
+                Daarvoor heb je een afbeeldingsbestand nodig in dezelfde map.
+            </p>
+        </x-text>
+
+        <x-image
+            alt="Windows Verkenner met index.html en een afbeelding zoals hond.jpg in dezelfde map"
+            caption="Je HTML-bestand en je afbeelding staan in dezelfde map"
+        />
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Voor een afbeelding gebruik je de tag <b>&lt;img&gt;</b>.
+                Die tag gebruikt attributen om extra informatie te geven.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<img src="hond.jpg" alt="Een hond">
+        </x-code>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                <b>src</b> vertelt welk bestand geladen moet worden.
+                <b>alt</b> beschrijft wat er op de afbeelding staat.
+            </p>
+            <p>
+                De bestandsnaam in <b>src</b> moet precies kloppen.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="4">
+        <x-result />
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 10 - LINKS EN MEERDERE PAGINA'S                 --}}
+{{-- ===================================================== --}}
+<x-page :number="10">
+    <x-title>Links en meerdere pagina's</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Een website heeft vaak meerdere pagina's. Je kunt bijvoorbeeld naast
+                <b>index.html</b> ook <b>games.html</b> maken.
+            </p>
+        </x-text>
+
+        <x-image
+            alt="Windows Verkenner met index.html en games.html in dezelfde map"
+            caption="Een website kan uit meerdere HTML-bestanden bestaan"
+        />
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Om van de ene pagina naar de andere te gaan, gebruik je een link.
+                Daarvoor gebruik je de tag <b>&lt;a&gt;</b>.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<a href="games.html">Mijn games</a>
+        </x-code>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Deze tag werkt zo:
+            </p>
+            <ul>
+                <li><b>&lt;a&gt;</b> maakt een link</li>
+                <li><b>href="games.html"</b> zegt waar je heen gaat</li>
+                <li><b>Mijn games</b> is de klikbare tekst</li>
+            </ul>
+        </x-text>
+    </x-step>
+
+    <x-step number="4">
+        <x-text>
+            <p>
+                Maak nu een tweede pagina met de naam <b>games.html</b>.
+                Zet daar ook een titel en een stukje tekst in.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="5">
+        <x-text>
+            <p>
+                Zet op je homepagina een link naar <b>games.html</b> en op <b>games.html</b>
+                weer een link terug naar <b>index.html</b>.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<a href="index.html">Terug naar home</a>
+        </x-code>
+    </x-step>
+
+    <x-step number="6">
+        <x-result />
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 11 - STYLE.CSS MAKEN                            --}}
+{{-- ===================================================== --}}
+<x-page :number="11">
+    <x-title>Style.css maken</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Tot nu toe heb je vooral inhoud gemaakt. Nu gaan we de website mooier maken.
+                Daarvoor gebruiken we CSS in een apart bestand.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Maak in dezelfde map als <b>index.html</b> een nieuw bestand met de naam <b>style.css</b>.
+            </p>
+        </x-text>
+
+        <x-image
+            alt="Windows Verkenner met index.html, games.html en style.css in dezelfde map"
+            caption="Je CSS-bestand staat in dezelfde map als je HTML-bestanden"
+        />
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Omdat je nu weet wat de <b>head</b> is, kunnen we daar ook een verwijzing zetten
+                naar het CSS-bestand.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<link rel="stylesheet" href="style.css">
+        </x-code>
+    </x-step>
+
+    <x-step number="4">
+        <x-text>
+            <p>
+                Deze regel betekent:
+            </p>
+            <ul>
+                <li><b>link</b> maakt een koppeling naar een ander bestand</li>
+                <li><b>rel="stylesheet"</b> zegt dat dat bestand opmaak bevat</li>
+                <li><b>href="style.css"</b> zegt welk bestand gebruikt moet worden</li>
+            </ul>
+        </x-text>
+    </x-step>
+
+    <x-step number="5">
+        <x-text>
+            <p>
+                Zet die regel in de head van je HTML-bestand.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<head>
+    <title>Mijn eerste website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+        </x-code>
+    </x-step>
+
+    <x-step number="6">
+        <x-text>
+            <p>
+                Typ nu je eerste CSS in <b>style.css</b>:
+            </p>
+        </x-text>
+
+        <x-code language="css" label="CSS">
+body {
+    background-color: lightblue;
+}
+        </x-code>
+    </x-step>
+
+    <x-step number="7">
+        <x-text>
+            <p>
+                Sla beide bestanden op en ververs de browser.
+                Als het goed is, krijgt je pagina nu een lichtblauwe achtergrond.
+            </p>
+        </x-text>
+
+        <x-result />
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 12 - MEER CSS                                   --}}
+{{-- ===================================================== --}}
+<x-page :number="12">
+    <x-title>Meer styling met CSS</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                CSS werkt met regels. Zo'n regel kiest eerst een onderdeel van de pagina
+                en geeft daarna aan welke stijl dat onderdeel krijgt.
+            </p>
+        </x-text>
+
+        <x-code language="css" label="CSS">
+h1 {
+    color: darkblue;
+}
+        </x-code>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                In dit voorbeeld is <b>h1</b> de selector.
+                Dat betekent: pas deze stijl toe op alle grote titels.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Geef je website nu een netter lettertype en een rustige achtergrond.
+            </p>
+        </x-text>
+
+        <x-code language="css" label="CSS">
+body {
+    background-color: #f4f8ff;
+    font-family: Arial, sans-serif;
+}
+        </x-code>
+    </x-step>
+
+    <x-step number="4">
+        <x-text>
+            <p>
+                Geef je titel een opvallende kleur en zet hem in het midden.
+            </p>
+        </x-text>
+
+        <x-code language="css" label="CSS">
+h1 {
+    color: #691ec4;
+    text-align: center;
+}
+        </x-code>
+    </x-step>
+
+    <x-step number="5">
+        <x-text>
+            <p>
+                Maak de gewone tekst ook iets mooier leesbaar.
+            </p>
+        </x-text>
+
+        <x-code language="css" label="CSS">
+p {
+    color: #333333;
+    font-size: 18px;
+}
+        </x-code>
+    </x-step>
+
+    <x-step number="6">
+        <x-result />
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 13 - RUIMTE EN RANDEN                           --}}
+{{-- ===================================================== --}}
+<x-page :number="13">
+    <x-title>Ruimte en randen</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Mooie websites gebruiken niet alleen kleuren. Ook ruimte is belangrijk.
+                Als alles te dicht op elkaar staat, wordt het druk en lastig te lezen.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Met <b>margin</b> maak je ruimte buiten een element.
+                Met <b>padding</b> maak je ruimte binnen een element.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="3">
+        <x-code language="css" label="CSS">
+body {
+    margin: 40px;
+}
+        </x-code>
+    </x-step>
+
+    <x-step number="4">
+        <x-text>
+            <p>
+                Geef nu je titel een achtergrondkleur, wat ruimte en ronde hoeken.
+            </p>
+        </x-text>
+
+        <x-code language="css" label="CSS">
+h1 {
+    background-color: #ffd84d;
+    color: #691ec4;
+    padding: 16px;
+    border-radius: 12px;
+}
+        </x-code>
+    </x-step>
+
+    <x-step number="5">
+        <x-text>
+            <p>
+                Je kunt ook je paragrafen in een soort blok zetten.
+            </p>
+        </x-text>
+
+        <x-code language="css" label="CSS">
+p {
+    background-color: white;
+    padding: 12px;
+    border: 2px solid #691ec4;
+    border-radius: 8px;
+}
+        </x-code>
+    </x-step>
+
+    <x-step number="6">
+        <x-result />
+    </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 14 - JE EIGEN MINI-WEBSITE                      --}}
+{{-- ===================================================== --}}
+<x-page :number="14">
+    <x-title>Je eigen mini-website</x-title>
+
+    <x-step number="1">
+        <x-text>
+            <p>
+                Nu ga je alles combineren wat je hebt geleerd.
+                Je maakt je eigen mini-website met meerdere pagina's.
+            </p>
+        </x-text>
+    </x-step>
+
+    <x-step number="2">
+        <x-text>
+            <p>
+                Probeer in je website in ieder geval dit te gebruiken:
+            </p>
+            <ul>
+                <li>minstens 2 HTML-pagina's, zoals <b>index.html</b> en <b>games.html</b></li>
+                <li>1 CSS-bestand: <b>style.css</b></li>
+                <li>minstens 1 afbeelding</li>
+                <li>links tussen je pagina's</li>
+                <li>kopjes, tekst en lijstjes</li>
+            </ul>
+        </x-text>
+    </x-step>
+
+    <x-step number="3">
+        <x-text>
+            <p>
+                Controleer steeds:
+            </p>
+            <ul>
+                <li>kloppen je bestandsnamen?</li>
+                <li>werkt je link?</li>
+                <li>staat de verwijzing naar <b>style.css</b> in de head?</li>
+                <li>staat je inhoud in de body?</li>
+                <li>zie je je afbeelding?</li>
+            </ul>
+        </x-text>
+    </x-step>
+
+    <x-step number="4">
+        <x-callout>
+            Je hoeft niet alles in één keer perfect te doen. Testen, fouten maken en verbeteren
+            hoort bij webdevelopment.
+        </x-callout>
+    </x-step>
+
+    <x-step number="5">
+        <x-text>
+            <p>
+                Als je klaar bent, laat je jouw website zien.
+                Vertel welke pagina's je hebt gemaakt en wat jij het leukste vond om te bouwen.
+            </p>
+        </x-text>
+    </x-step>
+</x-page>
+
+<x-footer />
 </body>
 </html>

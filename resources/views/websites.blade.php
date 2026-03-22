@@ -79,11 +79,13 @@
     <x-step number="2">
         <x-text>
             <p>
-                Maak in die map een nieuw bestand met de naam <b>index.html</b>.
+                Maak in die map een nieuw bestand met de naam <b>index.html</b>. Dit kan je doen door met de rechtermuisknop in de map te klikken, te kiezen voor <b>Nieuw</b> en daarna voor <b>Tekstdocument</b>. Daarna verander je de naam van dat nieuwe bestand in <b>index.html</b>.
             </p>
+        </x-text>
+        <x-text>
             <p>
                 De naam <b>index</b> wordt vaak gebruikt voor de beginpagina van een website.
-                De uitgang <b>.html</b> laat zien dat dit een HTML-bestand is.
+                Het stuk <b>.html</b> laat zien dat dit een HTML-bestand is.
             </p>
         </x-text>
 
@@ -141,7 +143,7 @@
     <x-step number="4">
         <x-text>
             <p>
-                Sla het bestand op en open <b>index.html</b> in je browser.
+                Sla het bestand op en open <b>index.html</b> in je browser (bijvoorbeeld Chrome, Firefox of Edge).
                 Als het goed is zie je nu een grote titel en daaronder tekst.
             </p>
         </x-text>
@@ -160,7 +162,7 @@
         </x-text>
 
         <x-callout>
-            Sla op met <b>CTRL + S</b> en ververs daarna je browser.
+            Sla op met <b>CTRL + S</b> en ververs daarna je browser. Zo zie je meteen het resultaat van je aanpassingen.
         </x-callout>
     </x-step>
 
@@ -169,9 +171,10 @@
     <x-step number="1">
         <x-text>
             <p>
-                Wat je net hebt gemaakt werkt al. Maar een echte HTML-pagina heeft meestal
-                ook een duidelijke buitenkant.
+                Wat je net hebt gemaakt werkt al. Maar een echte HTML-pagina heeft ook onzichtbare structuur. Deze structuur helpt de browser om te begrijpen wat er op de pagina staat en hoe het allemaal in elkaar zit. De belangrijkste laag in die structuur is de <b>body</b>.
             </p>
+        </x-text>
+        <x-text>
             <p>
                 Het deel dat zichtbaar is op de pagina staat in de <b>body</b>.
                 Je kunt de body zien als het zichtbare gedeelte van de website.
@@ -267,7 +270,7 @@
         <x-text>
             <p>
                 Een van de dingen die je in de head kunt zetten is de <b>title</b>.
-                Dat is de titel die je meestal bovenin het browser-tabblad ziet.
+                Dat is de titel die je bovenin het browser-tabblad ziet.
             </p>
         </x-text>
 
@@ -352,7 +355,7 @@
     <x-step number="4">
         <x-text>
             <p>
-                <b>&lt;strong&gt;</b> maakt tekst belangrijker en meestal vet.
+                <b>&lt;strong&gt;</b> maakt tekst belangrijker en meestal dikgedrukt.
                 <b>&lt;i&gt;</b> maakt tekst schuin.
             </p>
         </x-text>
@@ -383,7 +386,7 @@
 <ul>
     <li>Pizza</li>
     <li>Minecraft</li>
-    <li>Katten</li>
+    <li>Honden</li>
 </ul>
         </x-code>
     </x-step>
@@ -642,11 +645,11 @@
             </p>
         </x-text>
 
-        <x-code language="html" label="HTML">
-
         <x-callout>
             Zorg dat de bestandnaam in <b>href</b> precies klopt, inclusief hoofdletters en kleine letters.
         </x-callout>
+
+        <x-code language="html" label="HTML">
 <head>
     <title>Mijn eerste website</title>
     <link rel="stylesheet" href="style.css">

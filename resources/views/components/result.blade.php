@@ -1,10 +1,11 @@
 @props([
     'image' => '',
-    'titles' => [],
-    'url' => 'localhost',
+    'titles' => ['index.html'],
+    'url' => 'index.html',
+    'height' => 'auto',
 ])
 
-<div class="result">
+<div class="result" style="height: {{ $height }}px;">
     <div class="result__tabbar">
         <div class="result__tabs">
             @foreach ($titles as $i => $title)

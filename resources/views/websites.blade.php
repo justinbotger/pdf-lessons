@@ -49,6 +49,7 @@
     <x-step number="3">
         <x-image
             alt="Windows Verkenner met een map waarin later websitebestanden kunnen staan"
+            src="{{ public_path('img/websites/directory-in-explorer.jpg') }}"
             caption="Een website begint vaak als een gewone map op je computer"
         />
     </x-step>
@@ -63,17 +64,22 @@
     <x-step number="1">
         <x-text>
             <p>
-                Maak eerst een nieuwe map aan, bijvoorbeeld met de naam <b>mijn-website</b>.
-                In die map zet je straks al je bestanden.
+                Maak eerst een nieuwe map aan op de USB-stick, bijvoorbeeld met de naam <b>mijn-website</b>.
+                In deze nieuwe map zet je straks al je bestanden.
             </p>
         </x-text>
 
         <x-image
             alt="Windows Verkenner waarin een nieuwe map met de naam mijn-website wordt aangemaakt"
+            src="{{ public_path('img/websites/new-folder.jpg') }}"
             caption="Maak eerst een map voor je website"
         />
+        <x-callout>
+            Het maakt niet uit of er al andere bestanden op de USB-stick staan.
+        </x-callout>
     </x-step>
-
+</x-page>
+<x-page :number="2">
     <x-step number="2">
         <x-text>
             <p>
@@ -87,6 +93,7 @@
 
         <x-image
             alt="Windows Verkenner met een bestand index.html in een map"
+            src="{{ public_path('img/websites/index-html.jpg') }}"
             caption="Je eerste HTML-bestand"
         />
     </x-step>
@@ -94,7 +101,7 @@
     <x-step number="3">
         <x-text>
             <p>
-                Open <b>index.html</b> in je editor. We gaan nu de eerste HTML typen.
+                Open <b>index.html</b> in Visual Studio Code. Je kan dit doen door met de rechtermuisknop op het bestand te klikken en te kiezen voor <b>Openen met Code</b>.
             </p>
         </x-text>
     </x-step>
@@ -145,9 +152,10 @@
             </p>
         </x-text>
 
-        <x-result />
+        <x-result :image="public_path('img/websites/first-html.png')" :height="300"/>
     </x-step>
-
+</x-page>
+<x-page :number="4">
     <x-step number="5">
         <x-text>
             <p>
@@ -160,12 +168,7 @@
             Sla op met <b>CTRL + S</b> en ververs daarna je browser.
         </x-callout>
     </x-step>
-</x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 4 - DE BODY                                     --}}
-{{-- ===================================================== --}}
-<x-page :number="4">
     <x-title>De body van je pagina</x-title>
 
     <x-step number="1">
@@ -203,6 +206,9 @@
                 Daarom horen je titel, tekst, lijstjes en afbeeldingen later allemaal in de body.
             </p>
         </x-text>
+        <x-callout>
+            Gebruik de <b>Tab</b> toets op je toetsenbord om je code netjes in te springen. Dat maakt het makkelijker leesbaar.
+        </x-callout>
     </x-step>
 </x-page>
 
@@ -247,12 +253,7 @@
             </ul>
         </x-text>
     </x-step>
-</x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 6 - DE HEAD EN TITLE                            --}}
-{{-- ===================================================== --}}
-<x-page :number="6">
     <x-title>De head en de title</x-title>
 
     <x-step number="1">
@@ -266,6 +267,12 @@
             </p>
         </x-text>
     </x-step>
+</x-page>
+
+{{-- ===================================================== --}}
+{{-- PAGINA 6 - DE HEAD EN TITLE                            --}}
+{{-- ===================================================== --}}
+<x-page :number="6">
 
     <x-step number="2">
         <x-text>
@@ -309,6 +316,8 @@
                 nu extra informatie gekregen.
             </p>
         </x-text>
+
+        <x-result :image="public_path('img/websites/first-html.png')" :height="180" :titles="['Mijn eerste website']"/>
     </x-step>
 </x-page>
 
@@ -361,10 +370,7 @@
                 <b>&lt;i&gt;</b> maakt tekst schuin.
             </p>
         </x-text>
-    </x-step>
-
-    <x-step number="5">
-        <x-result />
+        <x-result :image="public_path('img/websites/more-text-and-markup.png')" :height="300" :titles="['Mijn eerste website']"/>
     </x-step>
 </x-page>
 
@@ -394,7 +400,7 @@
 <ul>
     <li>Pizza</li>
     <li>Minecraft</li>
-    <li>Honden</li>
+    <li>Katten</li>
 </ul>
         </x-code>
     </x-step>
@@ -409,7 +415,7 @@
     </x-step>
 
     <x-step number="4">
-        <x-result />
+        <x-result  :image="public_path('img/websites/list.png')" :height="300" :titles="['Mijn eerste website']"/>
     </x-step>
 </x-page>
 
@@ -428,7 +434,8 @@
         </x-text>
 
         <x-image
-            alt="Windows Verkenner met index.html en een afbeelding zoals hond.jpg in dezelfde map"
+            alt="Windows Verkenner met index.html en een afbeelding zoals kat.jpg in dezelfde map"
+                src="{{ public_path('img/websites/image-in-explorer.jpg') }}"
             caption="Je HTML-bestand en je afbeelding staan in dezelfde map"
         />
     </x-step>
@@ -436,30 +443,34 @@
     <x-step number="2">
         <x-text>
             <p>
-                Voor een afbeelding gebruik je de tag <b>&lt;img&gt;</b>.
-                Die tag gebruikt attributen om extra informatie te geven.
+                Je kunt op internet zoeken naar afbeeldingen die je leuk vindt. Als je er een hebt gevonden, sla die dan op in dezelfde map als je <b>index.html</b>. Dit kan je doen door met de rechtermuisknop op de afbeelding te klikken en te kiezen voor <b>Afbeelding opslaan als...</b>.
             </p>
         </x-text>
-
-        <x-code language="html" label="HTML">
-<img src="hond.jpg" alt="Een hond">
-        </x-code>
+        <x-callout>
+            Let op dat je de afbeelding een korte naam geeft zonder spaties, bijvoorbeeld <b>kat.jpg</b>.
+        </x-callout>
     </x-step>
+</x-page>
+<x-page :number="10">
 
     <x-step number="3">
         <x-text>
             <p>
+                Voor een afbeelding gebruik je de tag <b>&lt;img&gt;</b>.
+                Die tag gebruikt attributen om extra informatie te geven.
                 <b>src</b> vertelt welk bestand geladen moet worden.
                 <b>alt</b> beschrijft wat er op de afbeelding staat.
-            </p>
-            <p>
                 De bestandsnaam in <b>src</b> moet precies kloppen.
             </p>
         </x-text>
+
+        <x-code language="html" label="HTML">
+<img src="kat.jpg" alt="Een kat">
+        </x-code>
     </x-step>
 
     <x-step number="4">
-        <x-result />
+        <x-result :image="public_path('img/websites/image.png')" :titles="['Mijn eerste website']"/>
     </x-step>
 </x-page>
 
@@ -479,6 +490,7 @@
 
         <x-image
             alt="Windows Verkenner met index.html en games.html in dezelfde map"
+            src="{{ public_path('img/websites/other-page.jpg') }}"
             caption="Een website kan uit meerdere HTML-bestanden bestaan"
         />
     </x-step>
@@ -495,6 +507,10 @@
 <a href="games.html">Mijn games</a>
         </x-code>
     </x-step>
+
+</x-page>
+
+<x-page :number="11">
 
     <x-step number="3">
         <x-text>
@@ -532,7 +548,45 @@
     </x-step>
 
     <x-step number="6">
-        <x-result />
+        <x-result  :image="public_path('img/websites/link.png')" :titles="['Mijn eerste website']"/>
+    </x-step>
+</x-page>
+<x-page :number="12">
+    <x-step number="7">
+        <x-text>
+            <p>
+                Je code is nu al best uitgebreid. Het is belangrijk dat je die netjes houdt.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+            <html>
+    <head>
+        <title>Mijn eerste website</title>
+    </head>
+    <body>
+        <h1>Mijn eerste website</h1>
+        <p>Hallo! Dit is mijn eerste website.</p>
+        <a href="games.html">Mijn games</a>
+        <p>Ik hou van <strong>games</strong>.</p>
+        <p>Mijn hobby is <i>tekenen</i>.</p>
+        <ul>
+            <li>Pizza</li>
+            <li>Minecraft</li>
+            <li>Honden</li>
+        </ul>
+        <img src="kat.jpg" alt="Een kat">
+    </body>
+</html>
+        </x-code>
+    </x-step>
+    <x-step number="8">
+        <x-text>
+            <p>
+                je <b>games.html</b> kan er bijvoorbeeld zo uitzien:
+            </p>
+        </x-text>
+        <x-result :image="public_path('img/websites/games-page.png')" :height="210" :titles="['Mijn games']"/>
     </x-step>
 </x-page>
 
@@ -560,6 +614,7 @@
 
         <x-image
             alt="Windows Verkenner met index.html, games.html en style.css in dezelfde map"
+            src="{{ public_path('img/websites/style-file.jpg') }}"
             caption="Je CSS-bestand staat in dezelfde map als je HTML-bestanden"
         />
     </x-step>
@@ -567,8 +622,7 @@
     <x-step number="3">
         <x-text>
             <p>
-                Omdat je nu weet wat de <b>head</b> is, kunnen we daar ook een verwijzing zetten
-                naar het CSS-bestand.
+                In de <b>head</b> van je HTML-bestand moet je nu nog een regel toevoegen om dat CSS-bestand te gebruiken.
             </p>
         </x-text>
 
@@ -576,7 +630,8 @@
 <link rel="stylesheet" href="style.css">
         </x-code>
     </x-step>
-
+</x-page>
+<x-page :number="12">
     <x-step number="4">
         <x-text>
             <p>
@@ -598,6 +653,10 @@
         </x-text>
 
         <x-code language="html" label="HTML">
+
+        <x-callout>
+            Zorg dat de bestandnaam in <b>href</b> precies klopt, inclusief hoofdletters en kleine letters.
+        </x-callout>
 <head>
     <title>Mijn eerste website</title>
     <link rel="stylesheet" href="style.css">
@@ -619,6 +678,9 @@ body {
         </x-code>
     </x-step>
 
+</x-page>
+
+<x-page :number="12">
     <x-step number="7">
         <x-text>
             <p>
@@ -627,21 +689,17 @@ body {
             </p>
         </x-text>
 
-        <x-result />
+        <x-result :image="public_path('img/websites/background-color.png')" :titles="['Mijn eerste website']"/>
     </x-step>
-</x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 12 - MEER CSS                                   --}}
-{{-- ===================================================== --}}
-<x-page :number="12">
     <x-title>Meer styling met CSS</x-title>
 
     <x-step number="1">
         <x-text>
             <p>
                 CSS werkt met regels. Zo'n regel kiest eerst een onderdeel van de pagina
-                en geeft daarna aan welke stijl dat onderdeel krijgt.
+                en geeft daarna aan welke stijl dat onderdeel krijgt. In dit voorbeeld is <b>h1</b> de selector.
+                Dat betekent: pas deze stijl toe op alle grote titels.
             </p>
         </x-text>
 
@@ -652,16 +710,10 @@ h1 {
         </x-code>
     </x-step>
 
-    <x-step number="2">
-        <x-text>
-            <p>
-                In dit voorbeeld is <b>h1</b> de selector.
-                Dat betekent: pas deze stijl toe op alle grote titels.
-            </p>
-        </x-text>
-    </x-step>
+</x-page>
+<x-page :number="13">
 
-    <x-step number="3">
+    <x-step number="2">
         <x-text>
             <p>
                 Geef je website nu een netter lettertype en een rustige achtergrond.
@@ -676,7 +728,7 @@ body {
         </x-code>
     </x-step>
 
-    <x-step number="4">
+    <x-step number="3">
         <x-text>
             <p>
                 Geef je titel een opvallende kleur en zet hem in het midden.
@@ -691,7 +743,7 @@ h1 {
         </x-code>
     </x-step>
 
-    <x-step number="5">
+    <x-step number="4">
         <x-text>
             <p>
                 Maak de gewone tekst ook iets mooier leesbaar.
@@ -704,17 +756,19 @@ p {
     font-size: 18px;
 }
         </x-code>
-    </x-step>
 
-    <x-step number="6">
-        <x-result />
+        <x-callout>
+            <b>px</b> staat voor pixels. Dat is een eenheid die de grootte van tekst en andere dingen op het scherm bepaalt.
+        </x-callout>
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 13 - RUIMTE EN RANDEN                           --}}
-{{-- ===================================================== --}}
 <x-page :number="13">
+
+    <x-step number="5">
+        <x-result :image="public_path('img/websites/styled-page.png')" :titles="['Mijn eerste website']"/>
+    </x-step>
+
     <x-title>Ruimte en randen</x-title>
 
     <x-step number="1">
@@ -735,9 +789,15 @@ p {
         </x-text>
     </x-step>
 
+</x-page>
+
+<x-page :number="13">
+
     <x-step number="3">
         <x-code language="css" label="CSS">
 body {
+    background-color: #f4f8ff;
+    font-family: Arial, sans-serif;
     margin: 40px;
 }
         </x-code>
@@ -746,29 +806,24 @@ body {
     <x-step number="4">
         <x-text>
             <p>
-                Geef nu je titel een achtergrondkleur, wat ruimte en ronde hoeken.
+                Geef nu je titel een achtergrondkleur, wat ruimte en ronde hoeken. Je kunt ook je paragrafen in een soort blok zetten.
             </p>
         </x-text>
 
         <x-code language="css" label="CSS">
 h1 {
-    background-color: #ffd84d;
     color: #691ec4;
+    text-align: center;
+    background-color: #ffd84d;
     padding: 16px;
     border-radius: 12px;
 }
         </x-code>
-    </x-step>
-
-    <x-step number="5">
-        <x-text>
-            <p>
-                Je kunt ook je paragrafen in een soort blok zetten.
-            </p>
-        </x-text>
 
         <x-code language="css" label="CSS">
 p {
+    color: #333333;
+    font-size: 18px;
     background-color: white;
     padding: 12px;
     border: 2px solid #691ec4;
@@ -777,15 +832,24 @@ p {
         </x-code>
     </x-step>
 
-    <x-step number="6">
-        <x-result />
-    </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 14 - JE EIGEN MINI-WEBSITE                      --}}
-{{-- ===================================================== --}}
 <x-page :number="14">
+
+    <x-step number="6">
+        <x-text>
+            <p>
+                Gefeliciteerd! Je hebt nu een mooie pagina gemaakt met HTML en CSS. Er zijn nog veel meer dingen die je kunt doen, maar dit is een goede basis om mee te beginnen.
+            </p>
+        </x-text>
+
+        <x-result :image="public_path('img/websites/final.png')" :titles="['Mijn eerste website']"/>
+    </x-step>
+
+</x-page>
+
+<x-page :number="14">
+
     <x-title>Je eigen mini-website</x-title>
 
     <x-step number="1">

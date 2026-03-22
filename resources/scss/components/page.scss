@@ -1,9 +1,12 @@
 @use "../variables" as *;
 
 .page {
-    page-break-after: always;
     padding-top: 100px;
     position: relative;
+
+    &:not(:last-of-type) {
+        page-break-after: always;
+    }
 
     &__number {
         font-size: 2em;

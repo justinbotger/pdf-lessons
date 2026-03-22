@@ -8,5 +8,7 @@
     @if($caption)
     <figcaption>{{ $caption }}</figcaption>
     @endif
-    <img src="{{ $src }}" alt="{{ $alt }}">
+    <div class="image__frame">
+        <img src="{{ $src }}" alt="{{ $alt }}">
+    </div>
 </figure>

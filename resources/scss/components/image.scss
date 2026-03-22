@@ -3,8 +3,18 @@
 .image {
     margin-bottom: 1rem;
 
+    &__frame {
+        overflow: hidden;
+        border-radius: 0.5rem;
+        border: 1px solid $color-primary;
+        box-sizing: border-box;
+    }
+
     img {
-        max-width: 100%;
+        display: block;
+        width: calc(100% + 2px);
+        max-width: none;
+        margin: -1px;
         border-radius: 0.5rem;
     }
 

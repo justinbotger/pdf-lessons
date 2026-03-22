@@ -581,7 +581,7 @@
                 je <b>games.html</b> kan er bijvoorbeeld zo uitzien:
             </p>
         </x-text>
-        <x-result :image="public_path('img/websites/games-page.png')" :height="210" :titles="['Mijn games']" :url="'games.html'"/>
+        <x-result :image="public_path('img/websites/games-page.png')" :height="250" :titles="['Mijn games']" :url="'games.html'"/>
     </x-step>
 </x-page>
 

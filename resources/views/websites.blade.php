@@ -453,6 +453,19 @@
     <x-step number="4">
         <x-result :image="public_path('img/websites/image.png')" :titles="['Mijn eerste website']"/>
     </x-step>
+
+    <x-step number="5">
+        <x-text>
+            <p>
+                Als je afbeelding te groot of te klein is, kun je dat oplossen met de attributen <b>width</b> en <b>height</b>.
+                Je kunt daar een getal in pixels invullen, bijvoorbeeld <b>width="200"</b> of <b>height="150"</b>.
+            </p>
+        </x-text>
+
+        <x-code language="html" label="HTML">
+<img src="kat.jpg" alt="Een kat" width="200">
+        </x-code>
+    </x-step>
 </x-page>
 
 <x-page :number="12">

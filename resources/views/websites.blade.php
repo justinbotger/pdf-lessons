@@ -13,9 +13,6 @@
 <body>
     <x-banner />
 
-{{-- ===================================================== --}}
-{{-- PAGINA 1 - WAT IS EEN WEBSITE?                         --}}
-{{-- ===================================================== --}}
 <x-page :number="1">
     <x-title>Wat is een website?</x-title>
 
@@ -55,9 +52,7 @@
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 2 - JE EERSTE BESTAND                           --}}
-{{-- ===================================================== --}}
+
 <x-page :number="2">
     <x-title>Je eerste bestand</x-title>
 
@@ -79,7 +74,8 @@
         </x-callout>
     </x-step>
 </x-page>
-<x-page :number="2">
+
+<x-page :number="3">
     <x-step number="2">
         <x-text>
             <p>
@@ -107,10 +103,8 @@
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 3 - JE EERSTE ZICHTBARE HTML                    --}}
-{{-- ===================================================== --}}
-<x-page :number="3">
+
+<x-page :number="4">
     <x-title>Je eerste zichtbare HTML</x-title>
 
     <x-step number="1">
@@ -155,7 +149,8 @@
         <x-result :image="public_path('img/websites/first-html.png')" :height="300"/>
     </x-step>
 </x-page>
-<x-page :number="4">
+
+<x-page :number="5">
     <x-step number="5">
         <x-text>
             <p>
@@ -212,10 +207,7 @@
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 5 - HET HTML-ELEMENT                            --}}
-{{-- ===================================================== --}}
-<x-page :number="5">
+<x-page :number="6">
     <x-title>De buitenkant van je document</x-title>
 
     <x-step number="1">
@@ -269,10 +261,7 @@
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 6 - DE HEAD EN TITLE                            --}}
-{{-- ===================================================== --}}
-<x-page :number="6">
+<x-page :number="7">
 
     <x-step number="2">
         <x-text>
@@ -321,10 +310,7 @@
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 7 - MEER TEKST EN OPMAAK IN HTML                --}}
-{{-- ===================================================== --}}
-<x-page :number="7">
+<x-page :number="8">
     <x-title>Meer tekst en opmaak in HTML</x-title>
 
     <x-step number="1">
@@ -374,10 +360,7 @@
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 8 - LIJSTJES                                    --}}
-{{-- ===================================================== --}}
-<x-page :number="8">
+<x-page :number="9">
     <x-title>Lijstjes maken</x-title>
 
     <x-step number="1">
@@ -419,10 +402,7 @@
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 9 - AFBEELDINGEN                                --}}
-{{-- ===================================================== --}}
-<x-page :number="9">
+<x-page :number="10">
     <x-title>Afbeeldingen toevoegen</x-title>
 
     <x-step number="1">
@@ -451,7 +431,8 @@
         </x-callout>
     </x-step>
 </x-page>
-<x-page :number="10">
+
+<x-page :number="11">
 
     <x-step number="3">
         <x-text>
@@ -474,10 +455,7 @@
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 10 - LINKS EN MEERDERE PAGINA'S                 --}}
-{{-- ===================================================== --}}
-<x-page :number="10">
+<x-page :number="12">
     <x-title>Links en meerdere pagina's</x-title>
 
     <x-step number="1">
@@ -510,7 +488,7 @@
 
 </x-page>
 
-<x-page :number="11">
+<x-page :number="13">
 
     <x-step number="3">
         <x-text>
@@ -551,7 +529,8 @@
         <x-result  :image="public_path('img/websites/link.png')" :titles="['Mijn eerste website']"/>
     </x-step>
 </x-page>
-<x-page :number="12">
+
+<x-page :number="14">
     <x-step number="7">
         <x-text>
             <p>
@@ -586,14 +565,11 @@
                 je <b>games.html</b> kan er bijvoorbeeld zo uitzien:
             </p>
         </x-text>
-        <x-result :image="public_path('img/websites/games-page.png')" :height="210" :titles="['Mijn games']"/>
+        <x-result :image="public_path('img/websites/games-page.png')" :height="210" :titles="['Mijn games']" :url="'games.html'"/>
     </x-step>
 </x-page>
 
-{{-- ===================================================== --}}
-{{-- PAGINA 11 - STYLE.CSS MAKEN                            --}}
-{{-- ===================================================== --}}
-<x-page :number="11">
+<x-page :number="15">
     <x-title>Style.css maken</x-title>
 
     <x-step number="1">
@@ -631,7 +607,8 @@
         </x-code>
     </x-step>
 </x-page>
-<x-page :number="12">
+
+<x-page :number="16">
     <x-step number="4">
         <x-text>
             <p>
@@ -680,7 +657,7 @@ body {
 
 </x-page>
 
-<x-page :number="12">
+<x-page :number="17">
     <x-step number="7">
         <x-text>
             <p>
@@ -711,7 +688,8 @@ h1 {
     </x-step>
 
 </x-page>
-<x-page :number="13">
+
+<x-page :number="18">
 
     <x-step number="2">
         <x-text>
@@ -763,7 +741,7 @@ p {
     </x-step>
 </x-page>
 
-<x-page :number="13">
+<x-page :number="19">
 
     <x-step number="5">
         <x-result :image="public_path('img/websites/styled-page.png')" :titles="['Mijn eerste website']"/>
@@ -791,7 +769,7 @@ p {
 
 </x-page>
 
-<x-page :number="13">
+<x-page :number="20">
 
     <x-step number="3">
         <x-code language="css" label="CSS">
@@ -834,9 +812,9 @@ p {
 
 </x-page>
 
-<x-page :number="14">
+<x-page :number="21">
 
-    <x-step number="6">
+    <x-step number="5">
         <x-text>
             <p>
                 Gefeliciteerd! Je hebt nu een mooie pagina gemaakt met HTML en CSS. Er zijn nog veel meer dingen die je kunt doen, maar dit is een goede basis om mee te beginnen.
@@ -848,15 +826,17 @@ p {
 
 </x-page>
 
-<x-page :number="14">
-
-    <x-title>Je eigen mini-website</x-title>
+<x-page :number="22">
+    <x-title>Maak je eigen website</x-title>
 
     <x-step number="1">
         <x-text>
             <p>
-                Nu ga je alles combineren wat je hebt geleerd.
-                Je maakt je eigen mini-website met meerdere pagina's.
+                Nu ga je zelf iets bouwen. Je weet nu hoe HTML en CSS werken,
+                hoe je een afbeelding toevoegt en hoe je pagina’s aan elkaar koppelt.
+            </p>
+            <p>
+                Gebruik alles wat je hebt geleerd om je eigen website te maken.
             </p>
         </x-text>
     </x-step>
@@ -864,14 +844,15 @@ p {
     <x-step number="2">
         <x-text>
             <p>
-                Probeer in je website in ieder geval dit te gebruiken:
+                Kies eerst een onderwerp voor jouw website. Bijvoorbeeld:
             </p>
             <ul>
-                <li>minstens 2 HTML-pagina's, zoals <b>index.html</b> en <b>games.html</b></li>
-                <li>1 CSS-bestand: <b>style.css</b></li>
-                <li>minstens 1 afbeelding</li>
-                <li>links tussen je pagina's</li>
-                <li>kopjes, tekst en lijstjes</li>
+                <li>mijn favoriete game</li>
+                <li>mijn hobby’s</li>
+                <li>mijn dieren</li>
+                <li>mijn familie</li>
+                <li>mijn droomvakantie</li>
+                <li>mijn favoriete eten</li>
             </ul>
         </x-text>
     </x-step>
@@ -879,32 +860,51 @@ p {
     <x-step number="3">
         <x-text>
             <p>
-                Controleer steeds:
+                Denk daarna na over welke pagina’s je wilt maken.
+                Je kunt bijvoorbeeld beginnen met:
             </p>
             <ul>
-                <li>kloppen je bestandsnamen?</li>
-                <li>werkt je link?</li>
-                <li>staat de verwijzing naar <b>style.css</b> in de head?</li>
-                <li>staat je inhoud in de body?</li>
-                <li>zie je je afbeelding?</li>
+                <li><b>index.html</b> als homepagina</li>
+                <li>een tweede pagina over jouw onderwerp</li>
+                <li>een derde pagina met nog iets extra’s</li>
             </ul>
         </x-text>
     </x-step>
 
     <x-step number="4">
-        <x-callout>
-            Je hoeft niet alles in één keer perfect te doen. Testen, fouten maken en verbeteren
-            hoort bij webdevelopment.
-        </x-callout>
+        <x-text>
+            <p>
+                Zorg dat jouw website in ieder geval deze dingen heeft:
+            </p>
+            <ul>
+                <li>minstens 2 HTML-pagina’s</li>
+                <li>een gekoppeld <b>style.css</b> bestand</li>
+                <li>minstens 1 afbeelding</li>
+                <li>minstens 1 link naar een andere pagina</li>
+                <li>kopjes, tekst en een lijstje</li>
+            </ul>
+        </x-text>
     </x-step>
 
     <x-step number="5">
         <x-text>
             <p>
-                Als je klaar bent, laat je jouw website zien.
-                Vertel welke pagina's je hebt gemaakt en wat jij het leukste vond om te bouwen.
+                Controleer tijdens het bouwen steeds of alles werkt:
             </p>
+            <ul>
+                <li>kloppen je bestandsnamen?</li>
+                <li>werkt je link?</li>
+                <li>staat <b>style.css</b> goed gekoppeld in de head?</li>
+                <li>zie je je afbeelding?</li>
+                <li>ziet je website eruit zoals jij wilt?</li>
+            </ul>
         </x-text>
+    </x-step>
+
+    <x-step number="6">
+        <x-callout>
+            Je hoeft niet alles in één keer perfect te doen. Bouw rustig stap voor stap en test vaak in de browser.
+        </x-callout>
     </x-step>
 </x-page>
 
